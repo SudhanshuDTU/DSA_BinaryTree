@@ -2,13 +2,13 @@
 using namespace std;
 #include<queue>
 
-class node{
+class Node{
   public:
    int data;
-   node* left;
-   node* right;
+   Node* left;
+   Node* right;
  
- node(int d){
+ Node(int d){
     this->data = d;
     this->left = NULL;
     this->right = NULL;
@@ -16,11 +16,11 @@ class node{
  }
 };
 
-node* buildTree(node* root){
+Node* buildTree(Node* root){
   cout<<"Enter the data: "<<endl;
   int data;
   cin>>data;
-  root = new node(data);
+  root = new Node(data);
   
   if(data == -1){
     return NULL;
@@ -34,13 +34,13 @@ node* buildTree(node* root){
  return root;
 }
 
-void levelOrderTraversal(node* root){ 
-    queue<node*> q;
+void levelOrderTraversal(Node* root){ 
+    queue<Node*> q;
     q.push(root);
     q.push(NULL);
 
     while(!q.empty()){
-       node*temp = q.front();
+       Node*temp = q.front();
         q.pop();
 
        if(temp == NULL){
@@ -66,7 +66,7 @@ void levelOrderTraversal(node* root){
 }
 
 int main(){
-    node* root = NULL;
+    Node* root = NULL;
 
     //creating tree
     root = buildTree(root);
