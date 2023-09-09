@@ -41,6 +41,7 @@ void levelOrderTraversal(node* root){
 
     while(!q.empty()){
        node*temp = q.front();
+        q.pop();
 
        if(temp == NULL){
          cout<<endl;
@@ -50,7 +51,7 @@ void levelOrderTraversal(node* root){
        }
        else{
        cout<<temp->data<<" ";
-       q.pop();
+      
        if(temp->left){
          q.push(temp->left);
        }
@@ -69,6 +70,7 @@ int main(){
 
     //creating tree
     root = buildTree(root);
+    levelOrderTraversal(root);
 
 
 }
