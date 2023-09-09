@@ -2,13 +2,13 @@
 using namespace std;
 #include<queue>
 
-class node{
+class Node{
   public:
    int data;
-   node* left;
-   node* right;
+   Node* left;
+   Node* right;
  
- node(int d){
+ Node(int d){
     this->data = d;
     this->left = NULL;
     this->right = NULL;
@@ -16,7 +16,7 @@ class node{
  }
 };
 
-void postOrderTraversal(node* root){
+void postOrderTraversal(Node* root){
     if(root == NULL){
         return;
     }
@@ -25,7 +25,7 @@ void postOrderTraversal(node* root){
    
    //right
    postOrderTraversal(root->right);
-   
+
    //node
    cout<< root->data << " " ;
    

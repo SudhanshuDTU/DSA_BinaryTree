@@ -1,13 +1,13 @@
 #include<iostream>
 using namespace std;
 
-class node{
+class Node{
   public:
    int data;
-   node* left;
-   node* right;
+   Node* left;
+   Node* right;
  
- node(int d){
+ Node(int d){
     this->data = d;
     this->left = NULL;
     this->right = NULL;
@@ -15,11 +15,11 @@ class node{
  }
 };
 
-node* buildTree(node* root){
+Node* buildTree(Node* root){
   cout<<"Enter the data: "<<endl;
   int data;
   cin>>data;
-  root = new node(data);
+  root = new Node(data);
   
   if(data == -1){
     return NULL;
@@ -34,7 +34,7 @@ node* buildTree(node* root){
 }
 
 int main(){
-    node* root = NULL;
+    Node* root = NULL;
 
     //creating tree
     root = buildTree(root);
